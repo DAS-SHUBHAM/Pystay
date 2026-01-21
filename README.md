@@ -1,83 +1,83 @@
+🏨 PyStay – Hotel Management System
 
-# PyStay – Hotel Management System 🏨
+PyStay is a desktop-based Hotel Management System built using Python (Tkinter) and MySQL.
+It provides an easy-to-use graphical interface for managing customers, room bookings, and billing operations in a hotel environment.
 
-PyStay is a **desktop-based Hotel Management System** built using **Python (Tkinter)** and **MySQL**. It provides an easy-to-use graphical interface for managing **customers**, **room bookings**, and **billing** operations in a hotel environment.
+This project is suitable for learning GUI development, database connectivity, and CRUD operations using Python.
 
-This project is suitable for **learning GUI development**, **database connectivity**, and **CRUD operations** using Python.
----
-## ✨ Features
-### 🔹 Main Dashboard
-* Centralized menu-driven interface
-* Navigation to Customer and Room Booking modules
-* Attractive UI using images and layout
-  
-### 🔹 Customer Management
-* Add, update, delete customer records
-* Auto-generate customer reference number
-* Search customers by mobile, ID number, or reference ID
-* View customer details in a table (TreeView)
+✨ Features
+🔹 Authentication System (New)
+User Sign Up and Login
+Credentials stored securely in MySQL
+Mandatory login before accessing the system
 
-### 🔹 Room Booking Management
-* Book rooms with check-in & check-out dates
-* Fetch customer details using contact number
-* Select room type, meal type, and stay duration
-* Automatic bill calculation (tax, subtotal, total price)
-* Update or delete room bookings
+🔹 Main Dashboard
+Centralized menu-driven interface
+Navigation to Customer, Room, Details, and Reports modules
+Attractive UI using images
 
-### 🔹 Billing System
-* Calculates cost based on:
-  * Room type (Single / Double / Luxury)
-  * Meal type (Veg / Non-Veg)
-  * Number of staying days
-* Displays tax, subtotal, and final amount
----
+🔹 Customer Management
+Add, update, delete customer records
+Auto-generate customer reference number
+Search customers by:
+Mobile number
+ID number
+Reference ID
+View customer details in a table (TreeView)
 
-## 🛠️ Technologies Used
-* **Python 3.x**
-* **Tkinter** – GUI development
-* **Pillow (PIL)** – Image handling
-* **MySQL** – Database
-* **mysql-connector-python** – Database connectivity
----
+🔹 Room Booking Management
+Book rooms with check-in & check-out dates
+Fetch customer details using contact number
+Select:
+Room type (Single / Double / Luxury)
+Meal type (Veg / Non-Veg)
+Automatic bill calculation:
+Tax
+Subtotal
+Total amount
+Update or delete room bookings
 
-## 📂 Project Structure
-```
+🔹 Billing System
+Calculates cost based on:
+Room type
+Meal type
+Number of staying days
+Displays tax, subtotal, and final payable amount
+
+🛠️ Technologies Used
+Python 3.x
+Tkinter – GUI development
+Pillow (PIL) – Image handling
+MySQL – Database
+mysql-connector-python – Database connectivity
+
+📂 Project Structure
 PyStay/
 │
-├── main.py              # Main dashboard (HotelManagementSystem)
-├── customer.py          # Customer management module
-├── room.py              # Room booking & billing module
-├── img/                 # Images used in the UI
-│   ├── logo.png
-│   ├── hotels.jpg
-│   ├── bedroom.jpg
-│   └── ...
-├── README.md
-```
+├── login.py              # Main dashboard & authentication
+├── main.py               # Handling tkinter
+├── customer.py           # Customer management module
+├── room.py               # Room booking & billing details
+├── details.py            # Hanling customer details and adding rooms
+├── img/                  # UI/UX design images
+|-- README.md
 
----
-
-## ⚙️ Requirements
-### 🔹 Software Requirements
-* Python **3.8 or higher**
-* MySQL Server
-* MySQL Workbench (optional, for database management)
-
-### 🔹 Python Libraries
-Install the required libraries using:
-```bash
+⚙️ Requirements
+🔹 Software Requirements
+Python 3.8 or higher
+MySQL Server
+MySQL Workbench (optional)
+🔹 Python Libraries
+Install required libraries:
 pip install pillow mysql-connector-python
-```
-Tkinter comes **pre-installed** with Python.
----
-## 🗄️ Database Setup
-### 1️⃣ Create Database
-```sql
+Tkinter comes pre-installed with Python.
+
+🗄️ Database Setup
+1️⃣ Create Database
 CREATE DATABASE hoteldb;
 USE hoteldb;
-```
-### 2️⃣ Create Customer Table
-```sql
+
+2️⃣ Create Customer Table
 CREATE TABLE Customer (
     c_ref VARCHAR(20) PRIMARY KEY,
     c_name VARCHAR(100),
@@ -91,9 +91,8 @@ CREATE TABLE Customer (
     id_number VARCHAR(50),
     address VARCHAR(255)
 );
-```
-### 3️⃣ Create Rooms Table
-```sql
+
+3️⃣ Create Rooms Table
 CREATE TABLE rooms (
     contact VARCHAR(20),
     CheckIn VARCHAR(20),
@@ -106,53 +105,64 @@ CREATE TABLE rooms (
     SubTotal VARCHAR(20),
     TotalPrice VARCHAR(20)
 );
-```
-### 4️⃣ Update Database Credentials
-In **customer.py** and **room.py**, update the MySQL credentials if required:
-```python
+
+🔐 Database Configuration
+Update MySQL credentials in customer.py, room.py, and login/signup module if required:
 mysql.connector.connect(
     host="localhost",
     username="root",
     password="root",
     database="hoteldb"
 )
-```
----
-## ▶️ How to Run the Project
-1. Clone the repository:
-   ```bash
-   git clone https://github.com/your-username/PyStay.git
-   ```
-2. Navigate to the project folder:
-   ```bash
-   cd PyStay
-   ```
-3. Ensure MySQL server is running
-4. Run the main file:
-   ```bash
-   python main.py
-   ```
----
-## 📸 Screens Included
-* Dashboard UI
-* Customer Management Window
-* Room Booking Window
-* Billing Calculation Screen
-*(Add screenshots here for better GitHub presentation)*
----
-## 🚀 Future Improvements
-* Login & authentication system
-* Room availability tracking
-* PDF invoice generation
-* Date picker calendar
-* Improved validation & error handling
----
-## 👨‍💻 Author
-**Shubham Das**
-Python Developer | GUI & Database Enthusiast
----
-## 📜 License
-This project is created for **learning and educational purposes**. You are free to modify and enhance it.
----
 
-⭐ If you like this project, don’t forget to **star the repository** on GitHub!
+▶️ How to Run the Project (Step-by-Step)
+Step 1️⃣ Clone the Repository
+git clone https://github.com/your-username/PyStay.git
+cd PyStay
+
+Step 2️⃣ Start MySQL Server
+Ensure MySQL service is running
+Database and tables must be created
+
+Step 3️⃣ Run the Application
+python main.py
+
+🧭 How to Use the System (Important)
+🔹 Step 1: Sign Up (First-Time Users)
+
+Launch the application
+Click Sign Up
+Create a new username and password
+Account will be saved in the database
+🔹 Step 2: Login
+Enter registered username and password
+Click Log In
+On successful login, the Dashboard opens
+🔹 Step 3: Dashboard Navigation
+From the left menu, you can access:
+Customer → Add / Update / Delete customer details
+Rooms → Book rooms & calculate bills
+Details → View booking details
+Report → View system data
+Logout → Exit the session
+
+🔐 Login Screen
+📝 Sign Up Screen
+🏨 Main Dashboard
+👤 Customer Management Module
+
+🚀 Future Improvements
+Role-based login (Admin / Staff)
+Room availability tracking
+PDF invoice generation
+Calendar date picker
+Stronger password hashing
+Improved validation & error handling
+
+👨‍💻 Author
+Shubham Das
+Python Developer | GUI & Database Enthusiast
+
+📜 License
+This project is created for learning and educational purposes.
+You are free to modify and enhance it.
