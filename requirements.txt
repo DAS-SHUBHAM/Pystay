@@ -1,0 +1,5 @@
+mysql-connector-python
+Pillow
+bcrypt
+flask
+python-dotenv
